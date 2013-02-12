@@ -51,7 +51,6 @@ SUBDIRS = \
 	ntp \
 	openldap \
 	openssl \
-	openssl1x \
 	pbzip2 \
 	perl \
 	rsync \
@@ -72,7 +71,7 @@ STRAP_SUBDIRS = \
 	libxml \
 	libz \
 	nss-nspr \
-	openssl1x
+	openssl
 
 NAME =	illumos-extra
 
@@ -92,14 +91,14 @@ all: $(SUBDIRS)
 
 strap: $(STRAP_SUBDIRS)
 
-curl: libz openssl1x libidn
+curl: libz openssl libidn
 gzip: libz
-node.js: openssl1x libm
+node.js: openssl libm
 ncurses: libm
 dialog: ncurses
-socat: openssl1x
-wget: openssl1x libidn
-openldap: openssl1x
+socat: openssl
+wget: openssl libidn
+openldap: openssl
 
 #
 # pkg-config may be installed. This will actually only hurt us rather than help

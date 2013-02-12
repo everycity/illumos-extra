@@ -30,7 +30,7 @@ TARBALL_COMPRESS =	-j
 
 AUTOCONF_OPTS +=	--with-ssl=$(DESTDIR)/usr
 
-PATCHES =	Patches/*
+#PATCHES =	Patches/*
 
 include ../Makefile.targ
 include ../Makefile.targ.autoconf
