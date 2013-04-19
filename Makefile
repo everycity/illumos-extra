@@ -45,6 +45,7 @@ SUBDIRS = \
 	libm \
 	libxml \
 	libz \
+	make \
 	ncurses \
 	node.js \
 	nss-nspr \
@@ -70,8 +71,10 @@ STRAP_SUBDIRS = \
 	libm \
 	libxml \
 	libz \
+	make \
 	nss-nspr \
 	openssl
+	perl
 
 NAME =	illumos-extra
 
@@ -99,6 +102,9 @@ dialog: ncurses
 socat: openssl
 wget: openssl libidn
 openldap: openssl
+libm: make
+g11n: make
+perl: libm
 
 #
 # pkg-config may be installed. This will actually only hurt us rather than help
