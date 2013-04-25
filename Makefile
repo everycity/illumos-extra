@@ -73,7 +73,7 @@ STRAP_SUBDIRS = \
 	libz \
 	make \
 	nss-nspr \
-	openssl
+	openssl \
 	perl
 
 NAME =	illumos-extra
