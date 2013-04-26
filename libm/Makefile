@@ -26,6 +26,8 @@ DESTDIR=$(BASE)/../proto
 
 include ../Makefile.defs
 
+SUN_MAKE=/opt/local/bin/dmake
+
 all: 
 	(cd usr/src/harness; env - \
 	    SUN_MAKE=$(SUN_MAKE) \
