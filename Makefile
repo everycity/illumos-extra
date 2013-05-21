@@ -53,6 +53,7 @@ SUBDIRS = \
 	openldap \
 	openlldp \
 	openssl \
+	openssl1x \
 	pbzip2 \
 	perl \
 	rsync \
@@ -74,7 +75,7 @@ STRAP_SUBDIRS = \
 	libz \
 	make \
 	nss-nspr \
-	openssl \
+	openssl1x \
 	perl
 
 NAME =	illumos-extra
@@ -95,14 +96,14 @@ all: $(SUBDIRS)
 
 strap: $(STRAP_SUBDIRS)
 
-curl: libz openssl libidn
+curl: libz openssl1x libidn
 gzip: libz
-node.js: openssl libm
+node.js: openssl1x libm
 ncurses: libm
 dialog: ncurses
-socat: openssl
-wget: openssl libidn
-openldap: openssl
+socat: openssl1x
+wget: openssl1x libidn
+openldap: openssl1x
 libm: make
 g11n: make
 perl: libm
