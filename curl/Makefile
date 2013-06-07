@@ -30,7 +30,7 @@ TARBALL_COMPRESS =	-j
 
 AUTOCONF_OPTS +=	--with-ssl=$(DESTDIR)/usr
 
-PATCHES =	$(shell ls Patches/* | grep -v Patches/sunw-openssl.diff)
+PATCHES =	Patches/*
 
 include ../Makefile.targ
 include ../Makefile.targ.autoconf
