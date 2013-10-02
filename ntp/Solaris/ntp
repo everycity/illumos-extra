@@ -69,6 +69,8 @@ while read; do
 	fi
 	need_host_check=yes
 	if ntpdate -q -u -p 1 -t 5 -- "$2" >/dev/null 2>/dev/null; then
+		# XXX Actually go ahead and set the clock.
+		ntpdate -u -- "$2"
 		host_ok=yes
 		break;
 	fi

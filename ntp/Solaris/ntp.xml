@@ -54,6 +54,14 @@
 		<service_fmri value='svc:/network/routing-setup' />
 	</dependency>
 
+	<dependency
+		name='routing'
+		grouping='require_all'
+		restart_on='none'
+		type='service'>
+		<service_fmri value='svc:/network/physical' />
+	</dependency>
+
 <!--	<dependent
 	    name='ntp_multi-user'
 	    grouping='optional_all'
