@@ -55,7 +55,7 @@
 	</dependency>
 
 	<dependency
-		name='routing'
+		name='network-physical'
 		grouping='require_all'
 		restart_on='none'
 		type='service'>
