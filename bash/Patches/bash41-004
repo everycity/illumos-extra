@@ -17,7 +17,7 @@ environment to have global scope.
 Patch (apply with `patch -p0'):
 
 *** ../bash-4.1-patched/variables.c	2009-11-03 14:13:58.000000000 -0500
---- variables.c	2010-02-08 17:36:18.000000000 -0500
+--- bash-4.1/variables.c	2010-02-08 17:36:18.000000000 -0500
 ***************
 *** 3809,3812 ****
 --- 3809,3817 ----
@@ -31,7 +31,7 @@ Patch (apply with `patch -p0'):
         /* XXX - should we set v->context here? */
         v = bind_variable_internal (var->name, value_cell (var), shell_variables->table, 0, 0);
 *** ../bash-4.1-patched/patchlevel.h	2009-10-01 16:39:22.000000000 -0400
---- patchlevel.h	2010-01-14 09:38:08.000000000 -0500
+--- bash-4.1/patchlevel.h	2010-01-14 09:38:08.000000000 -0500
 ***************
 *** 26,30 ****
      looks for to find the patch level (for the sccs version string). */
