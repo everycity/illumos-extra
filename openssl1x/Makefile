@@ -19,10 +19,10 @@
 # CDDL HEADER END
 #
 # Copyright (c) 2009, 2010, Oracle and/or its affiliates. All rights reserved.
-# Copyright (c) 2012-2013, Joyent, Inc.  All rights reserved.
+# Copyright (c) 2014, Joyent, Inc.  All rights reserved.
 #
 
-VER = openssl-1.0.1d
+VER = openssl-1.0.1h
 LIBVER =	1.0.0
 
 include ../Makefile.defs
@@ -82,6 +82,11 @@ CFLAGS.64 += \
 	-DPK11_LIB_LOCATION=\\"/usr/lib/64/libpkcs11.so.1\\"
 
 LIBS +=	-lsocket -lnsl
+
+ifeq ($(STRAP),strap)
+	LDFLAGS +=	$(SYSLIBDIRS:%=-R$(DESTDIR)/%)
+	LDFLAGS.64 +=	$(SYSLIBDIRS:%=-R$(DESTDIR)/%/64)
+endif
 
 PATCHES =	Patches/*
 
