@@ -36,8 +36,9 @@ AUTOCONF_OPTS += \
 	--with-audit=solaris \
 	--with-kerberos5=$(DESTDIR)/usr \
 	--with-pam \
-	--with-sandbox=no \
+	--with-sandbox=solaris \
 	--with-solaris-contracts \
+	--with-solaris-privs \
 	--with-tcp-wrappers \
 	--with-4in6 \
 	--with-xauth=/usr/bin/xauth \
@@ -52,7 +53,8 @@ AUTOCONF_OPTS += \
 AUTOCONF_ENV += \
 	DESTDIR="$(DESTDIR)" \
 	CTFMERGE="$(CTFMERGE)" \
-	CTFCONVERT="$(CTFCONVERT)"
+	CTFCONVERT="$(CTFCONVERT)" \
+	ALTCTFCONVERT="$(ALTCTFCONVERT)"
 
 CFLAGS += \
 	-O2 -gdwarf-2 \
@@ -62,6 +64,7 @@ CFLAGS += \
 	-DSET_USE_PAM -DDEPRECATE_SUNSSH_OPT -DKRB5_BUILD_FIX \
 	-DDTRACE_SFTP -DDISABLE_BANNER -DPAM_ENHANCEMENT \
 	-DPAM_BUGFIX -DOPTION_DEFAULT_VALUE -DHAVE_EVP_SHA256 \
+	-DPER_SESSION_XAUTHFILE \
 	-I$(DESTDIR)/usr/include/kerberosv5
 
 LDFLAGS +=	-B direct -z nolazyload
